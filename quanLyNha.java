@@ -1,6 +1,6 @@
 public class quanLyNha extends quanLyNhaDat{
-    Srting loaiNha;
-    String diaChi;
+    private String loaiNha;
+    private String diaChi;
     
     public quanLyNha(String maGiaoDich, int ngayGiaoDich, int thangGiaoDich, int namGiaoDich, double donGia, double dienTich, String loaiNha, String diaChi) {
         super(maGiaoDich, ngayGiaoDich, thangGiaoDich, namGiaoDich, donGia, dienTich);
