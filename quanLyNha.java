@@ -9,7 +9,7 @@ public class quanLyNha extends quanLyNhaDat{
     }
     @Override
     double thanhTien() {
-        if (loaiNha.equals("cao cap")) {
+        if (loaiNha.equals("Cao cap")) {
             return dienTich * donGia;
         } else {
             return dienTich * donGia * 0.9;

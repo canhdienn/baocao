@@ -1,4 +1,3 @@
-
 public class quanLyDat extends quanLyNhaDat{
     String loaiDat;
 

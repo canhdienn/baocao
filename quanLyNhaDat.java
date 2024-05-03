@@ -1,10 +1,10 @@
 abstract class quanLyNhaDat{
-    String maGiaoDich;
-    int ngayGiaoDich;
-    int thangGiaoDich;
-    int namGiaoDich;
-    double donGia;
-    double dienTich;
+    protected String maGiaoDich;
+    protected int ngayGiaoDich;
+    protected int thangGiaoDich;
+    protected int namGiaoDich;
+    protected double donGia;
+    protected double dienTich;
 
     public quanLyNhaDat(String maGiaoDich, int ngayGiaoDich, int thangGiaoDich, int namGiaoDich,double donGia,double dienTich){
         this.maGiaoDich = maGiaoDich;
@@ -52,7 +52,5 @@ abstract class quanLyNhaDat{
     public void setDienTich(double dienTich) {
         this.dienTich = dienTich;
     }
-    
-
     
 }
