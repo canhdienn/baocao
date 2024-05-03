@@ -1,5 +1,5 @@
 public class quanLyDat extends quanLyNhaDat{
-    String loaiDat;
+    private String loaiDat;
 
     public quanLyDat(String maGiaoDich, int ngayGiaoDich, int thangGiaoDich, int namGiaoDich, double donGia, double dienTich, String loaiDat) {
         super(maGiaoDich, ngayGiaoDich, thangGiaoDich, namGiaoDich, donGia, dienTich);
