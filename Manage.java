@@ -26,12 +26,15 @@ public class Manage {
     /////////// Tim giao dich co gia tien cao nhat tung loai
     public quanLyNhaDat findMaxThanhTienDat() {
         quanLyNhaDat maxThanhTien = listnNhaDats.get(0);
-        for (quanLyNhaDat quanLyNhaDat : listnNhaDats) {
-            if ( quanLyNhaDat.thanhTien() > maxThanhTien.thanhTien()) {
-                maxThanhTien = quanLyNhaDat;
+        for (quanLyNhaDat transaction : listnNhaDats) {
+            if (transaction instanceof quanLyDat) {
+                if ( transaction.thanhTien() > maxThanhTien.thanhTien()) {
+                    maxThanhTien = transaction;
+                }
             }
+          
         }
-        return maxThanhTien;
+        return maxThanhTien instanceof quanLyDat ? maxThanhTien : null;
     }
 
     public quanLyNhaDat findMaxThanhTienNha() {
@@ -44,7 +47,7 @@ public class Manage {
             }
           
         }
-        return maxThanhTien;
+        return maxThanhTien instanceof quanLyNha ? maxThanhTien : null;
     }
 
     ///////// Tinh trung binh
