@@ -76,9 +76,9 @@ import java.io.FileNotFoundException;
 public class Main {
     public static void main(String[] args) {
         File file = new File("input.txt");
+        Manage manage = new Manage();
 
         try (Scanner scanner = new Scanner(file)) {
-            Manage manage = new Manage();
 
             // Read and add land transaction
             String id1 = scanner.nextLine();
@@ -129,6 +129,7 @@ public class Main {
             System.out.println("4. Sap xep thu tu theo gia tien cac loai giao dich");
             System.out.println("5. Xem giao dich da ban hay chua");
             System.out.println("6. Xuat ra file output");
+            System.out.println("7. Tinh trung binh thanh tien giao dich dat");
             System.out.println("0. Thoat");
             System.out.println();
             System.out.println("Enter option: ");
@@ -151,6 +152,11 @@ public class Main {
                     break;
                 case 6:
                     // Handle option 6
+                    break;
+                case 7:
+                    // Handle option 7
+                    double average = manage.averageLandTransaction();
+                    System.out.println("Trung binh thanh tien cua giao dich dat " + average);
                     break;
                 case 0:
                     // Handle option 0
