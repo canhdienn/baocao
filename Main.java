@@ -1,9 +1,7 @@
-
 import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-
         Manage manage = new Manage();
 
         // Tạo và thêm các giao dịch
@@ -51,8 +49,12 @@ public class Main {
         quanLyNha transaction2 = new quanLyNha(id2, day2, month2, year2, price2, area2, type2, address2);
         manage.addTransaction(transaction2);
 
-        // In ra tất cả các giao dịch
-        manage.printTransactions();
+        //  In ra tất cả các giao dịch
+        // manage.printTransactions();
+
+        //  Menu
+        System.out.println("---MENU---");
+        System.out.println("1.Tinh  ");
         
     }
 }

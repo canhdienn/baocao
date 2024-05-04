@@ -8,10 +8,11 @@ public class Manage {
         listnNhaDats = new ArrayList<>();
     }
 
-    public void addEmployee(quanLyNhaDat employee) {
-        listnNhaDats.add(employee);
+    public void addTransaction(quanLyNhaDat transaction) {
+        listnNhaDats.add(transaction);
     }
 
+    // Tìm thành tiền lớn nhất
     public quanLyNhaDat findMaxThanhTien() {
         quanLyNhaDat maxThanhTien = listnNhaDats.get(0);
         for (quanLyNhaDat quanLyNhaDat : listnNhaDats) {
@@ -21,18 +22,13 @@ public class Manage {
         }
         return maxThanhTien;
     }
-    public void addTransaction(quanLyNhaDat transaction) {
-        listnNhaDats.add(transaction);
-    }
 
+    // In các dữ liệu ra màn hình
     public void printTransactions() {
         for (quanLyNhaDat transaction : listnNhaDats) {
             System.out.println(transaction.toString());
+            // System.out.println(transaction.dienTich);
         }
     }
-    // public void increaseCoefficientSalary (double increase) {
-    //     for (quanLyNhaDat employee : listnNhaDats) {
-    //         employee.coefficientSalary += increase;
-    //     }
-    // }
+
 }

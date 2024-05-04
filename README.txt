@@ -12,6 +12,7 @@ Thực hiện các yêu cầu sau:
 
 Xây dựng các lớp với chức năng thừa kế. 
 Nhập xuất danh sách các giao dịch. 
+
 Tính tổng số lượng cho từng loại. 
 Tính trung bình thành tiền của giao dịch đất. 
 Xuất ra các giao dịch của tháng 9 năm 2013. 
