@@ -21,7 +21,7 @@ Cập nhận lại diện tích/đơn giá
 Tìm giao dịch lớn nhất từng loại
 Sắp xếp theo giá tiền
 Thêm 1 thuộc tính đã bán hay chưa
-Xuất ra file txt
+Nhập từ file txt
 
 (Điền làm chẵn
 Vinh làm lẻ)
