@@ -1,11 +1,14 @@
 public class quanLyNha extends quanLyNhaDat{
-    private String loaiNha;
-    private String diaChi;
+    protected String loaiNha;
+    protected String diaChi;
     
     public quanLyNha(String maGiaoDich, int ngayGiaoDich, int thangGiaoDich, int namGiaoDich, double donGia, double dienTich, String loaiNha, String diaChi) {
         super(maGiaoDich, ngayGiaoDich, thangGiaoDich, namGiaoDich, donGia, dienTich);
         this.loaiNha = loaiNha;
         this.diaChi = diaChi;
+    }
+    public static enum LoaiNha {
+        A, B, C
     }
     @Override
     double thanhTien() {
@@ -15,4 +18,11 @@ public class quanLyNha extends quanLyNhaDat{
             return dienTich * donGia * 0.9;
         }
     }
+    @Override
+    public String toString() {
+        return "quanLyNha [maGiaoDich=" + maGiaoDich + ", loaiNha=" + loaiNha + ", ngayGiaoDich=" + ngayGiaoDich
+                + ", diaChi=" + diaChi + ", thangGiaoDich=" + thangGiaoDich + ", namGiaoDich=" + namGiaoDich
+                + ", donGia=" + donGia + ", dienTich=" + dienTich + "]";
+    }
+    
 }
