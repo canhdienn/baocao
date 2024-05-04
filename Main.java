@@ -154,6 +154,7 @@ public class Main {
         Scanner s = new Scanner(System.in);
         int option;
         do {
+            System.out.println();
             System.out.println("---MENU---");
             System.out.println("1. Xuat ra cac giao dich cua thang va nam tu chon");
             System.out.println("2. Cap nhat lai dien tich/don gia");
