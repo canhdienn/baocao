@@ -1,7 +1,11 @@
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 public class Manage {
+    private double donGia;
     public List<quanLyNhaDat> listnNhaDats;
 
     public Manage() {
@@ -44,8 +48,19 @@ public class Manage {
                 count++;
             }
         }
-
-    
         return count > 0 ? total / count : 0;
     }
+
+    public double getDonGia() {
+        return this.donGia;
+    }
+    public void sortTransactionsByPrice() {
+        Collections.sort(listnNhaDats, new Comparator<quanLyNhaDat>() {
+            @Override
+            public int compare(quanLyNhaDat o1, quanLyNhaDat o2) {
+                return Double.compare(o1.getDonGia(), o2.getDonGia());
+            }
+        });
+    }
 }
+
