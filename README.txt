@@ -10,11 +10,12 @@ Giao dịch nhà: Mã giao dịch, ngày giao dịch (ngày, tháng, năm), đơ
 
 Thực hiện các yêu cầu sau: 
 
-Xây dựng các lớp với chức năng thừa kế. 
-Nhập xuất danh sách các giao dịch. 
+Xây dựng các lớp với chức năng thừa kế. (Xong)
+Nhập xuất danh sách các giao dịch. (Xong)
 
 Tính tổng số lượng cho từng loại. 
 Tính trung bình thành tiền của giao dịch đất. 
+
 Xuất ra các giao dịch của tháng 9 năm 2013. 
 Cập nhận lại diện tích/đơn giá
 Tìm giao dịch lớn nhất từng loại
@@ -22,5 +23,5 @@ Sắp xếp theo giá tiền
 Thêm 1 thuộc tính đã bán hay chưa
 Xuất ra file txt
 
-Điền lam chẵn
-Vinh lam lẻ
+(Điền làm chẵn
+Vinh làm lẻ)
