@@ -1,7 +1,9 @@
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
+import java.util.Scanner;
 
 public class Manage {
     private double donGia;
@@ -11,80 +13,32 @@ public class Manage {
         listnNhaDats = new ArrayList<>();
     }
 
-    ///////////////// Them giao dich
+    public void addEmployee(quanLyNhaDat employee) {
+        listnNhaDats.add(employee);
+    }
+
+    public quanLyNhaDat findMaxThanhTien() {
+        quanLyNhaDat maxThanhTien = listnNhaDats.get(0);
+        for (quanLyNhaDat quanLyNhaDat : listnNhaDats) {
+            if ( quanLyNhaDat.thanhTien() > maxThanhTien.thanhTien()) {
+                maxThanhTien = quanLyNhaDat;
+            }
+        }
+        return maxThanhTien;
+    }
     public void addTransaction(quanLyNhaDat transaction) {
         listnNhaDats.add(transaction);
     }
 
-    ///////////// In cac giao dich ra
     public void printTransactions() {
         for (quanLyNhaDat transaction : listnNhaDats) {
             System.out.println(transaction.toString());
         }
     }
-
-    /////////// Tim giao dich co gia tien cao nhat tung loai
-    public quanLyNhaDat findMaxThanhTienDat() {
-        quanLyNhaDat maxThanhTien = listnNhaDats.get(0);
-        for (quanLyNhaDat transaction : listnNhaDats) {
-            if (transaction instanceof quanLyDat) {
-                if ( transaction.thanhTien() > maxThanhTien.thanhTien()) {
-                    maxThanhTien = transaction;
-                }
-            }
-          
-        }
-        return maxThanhTien instanceof quanLyDat ? maxThanhTien : null;
-    }
-
-    public quanLyNhaDat findMaxThanhTienNha() {
-        quanLyNhaDat maxThanhTien = listnNhaDats.get(0);
-        for (quanLyNhaDat transaction : listnNhaDats) {
-            if (transaction instanceof quanLyNha) {
-                if ( transaction.thanhTien() > maxThanhTien.thanhTien()) {
-                    maxThanhTien = transaction;
-                }
-            }
-          
-        }
-        return maxThanhTien instanceof quanLyNha ? maxThanhTien : null;
-    }
-    //////////Tinh Tong so luong tung loai
-    
-    public int findSoLuongDat() {
-        int count = 0;
-
-        for (quanLyNhaDat transaction : listnNhaDats) {
-            if (transaction instanceof quanLyDat) {
-                count++;
-            }
-        }
-        return count;
-    }
-
-    public int findSoLuongNha() {
-        int count = 0;
-
-        for (quanLyNhaDat transaction : listnNhaDats) {
-            if (transaction instanceof quanLyNha) {
-                count++;
-            }
-        }
-        return count;
-    }
-    ////////// Xuat cac giao dich theo thang va nam
-    public void printTransactionsByDate(int month, int year) {
-        boolean found = false;
-        for (quanLyNhaDat transaction : listnNhaDats) {
-            if (transaction.thangGiaoDich == month && transaction.namGiaoDich == year){
-                System.out.println(transaction.toString());
-                found = true;
-            }
-        }
-        if (!found) System.out.println("Not find, please try again");
-    }
-
-    ///////// Tinh trung binh
+    // public void increaseCoefficientSalary (double increase) {
+    //     for (quanLyNhaDat employee : listnNhaDats) {
+    //         employee.coefficientSalary += increase;
+    //     }
     public double averageLandTransaction() {
         double total = 0;
         int count = 0;
@@ -109,5 +63,29 @@ public class Manage {
             }
         });
     }
+    public void setDonGia(double donGia) {
+        this.donGia = donGia;
+    }
+    public void updateDonGia(String transactionId, double donGia) {
+        for (quanLyNhaDat transaction : listnNhaDats) {
+            if (transaction.getMaGiaoDich().equals(transactionId)) {
+                if (transaction instanceof quanLyDat) {
+                    ((quanLyDat) transaction).setDonGia(donGia);
+                } else if (transaction instanceof quanLyNha) {
+                    ((quanLyNha) transaction).setDonGia(donGia);
+                }
+                break;
+            }
+        }
+    }
+    public void printTransaction1(String transactionId) {
+        for (quanLyNhaDat transaction : listnNhaDats) {
+            if (transaction.getMaGiaoDich().equals(transactionId)) {
+                System.out.println(transaction.toString());
+                break;
+            }
+        }
+    }
+
 }
 
