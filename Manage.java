@@ -3,7 +3,7 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
-public class Manage {
+public class Manage{
     private double donGia;
     public List<quanLyNhaDat> listnNhaDats;
 
@@ -108,6 +108,29 @@ public class Manage {
                 return Double.compare(o1.getDonGia(), o2.getDonGia());
             }
         });
+    }
+    public void setDonGia(double donGia) {
+        this.donGia = donGia;
+    }
+    public void updateDonGia(String transactionId, double donGia) {
+        for (quanLyNhaDat transaction : listnNhaDats) {
+            if (transaction.getMaGiaoDich().equals(transactionId)) {
+                if (transaction instanceof quanLyDat) {
+                    ((quanLyDat) transaction).setDonGia(donGia);
+                } else if (transaction instanceof quanLyNha) {
+                    ((quanLyNha) transaction).setDonGia(donGia);
+                }
+                break;
+            }
+        }
+    }
+    public void printTransaction1(String transactionId) {
+        for (quanLyNhaDat transaction : listnNhaDats) {
+            if (transaction.getMaGiaoDich().equals(transactionId)) {
+                System.out.println(transaction.toString());
+                break;
+            }
+        }
     }
 }
 
