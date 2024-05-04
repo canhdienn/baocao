@@ -21,7 +21,15 @@ public class Manage {
         }
         return maxThanhTien;
     }
+    public void addTransaction(quanLyNhaDat transaction) {
+        listnNhaDats.add(transaction);
+    }
 
+    public void printTransactions() {
+        for (quanLyNhaDat transaction : listnNhaDats) {
+            System.out.println(transaction.toString());
+        }
+    }
     // public void increaseCoefficientSalary (double increase) {
     //     for (quanLyNhaDat employee : listnNhaDats) {
     //         employee.coefficientSalary += increase;
