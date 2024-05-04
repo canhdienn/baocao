@@ -52,15 +52,4 @@ abstract class quanLyNhaDat{
     public void setDienTich(double dienTich) {
         this.dienTich = dienTich;
     }
-    @Override
-    public String toString() {
-        return "quanLyNhaDat [maGiaoDich=" + maGiaoDich + ", ngayGiaoDich=" + ngayGiaoDich + ", thangGiaoDich="
-                + thangGiaoDich + ", namGiaoDich=" + namGiaoDich + ", donGia=" + donGia + ", dienTich=" + dienTich
-                + ", thanhTien()=" + thanhTien() + ", getMaGiaoDich()=" + getMaGiaoDich() + ", getNgayGiaoDich()="
-                + getNgayGiaoDich() + ", getThangGiaoDich()=" + getThangGiaoDich() + ", getNamGiaoDich()="
-                + getNamGiaoDich() + ", getDonGia()=" + getDonGia() + ", getDienTich()=" + getDienTich()
-                + ", getClass()=" + getClass() + ", hashCode()=" + hashCode() + ", toString()=" + super.toString()
-                + "]";
-    }
-    
 }
