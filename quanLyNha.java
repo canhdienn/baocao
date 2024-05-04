@@ -18,6 +18,9 @@ public class quanLyNha extends quanLyNhaDat{
             return dienTich * donGia * 0.9;
         }
     }
+    public void setDonGia(double donGia){
+        this.donGia = donGia;
+    }
     @Override
     public String toString() {
         return "quanLyNha [maGiaoDich=" + maGiaoDich + ", loaiNha=" + loaiNha + ", ngayGiaoDich=" + ngayGiaoDich
