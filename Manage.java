@@ -49,6 +49,40 @@ public class Manage {
         }
         return maxThanhTien instanceof quanLyNha ? maxThanhTien : null;
     }
+    //////////Tinh Tong so luong tung loai
+    
+    public int findSoLuongDat() {
+        int count = 0;
+
+        for (quanLyNhaDat transaction : listnNhaDats) {
+            if (transaction instanceof quanLyDat) {
+                count++;
+            }
+        }
+        return count;
+    }
+
+    public int findSoLuongNha() {
+        int count = 0;
+
+        for (quanLyNhaDat transaction : listnNhaDats) {
+            if (transaction instanceof quanLyNha) {
+                count++;
+            }
+        }
+        return count;
+    }
+    ////////// Xuat cac giao dich theo thang va nam
+    public void printTransactionsByDate(int month, int year) {
+        boolean found = false;
+        for (quanLyNhaDat transaction : listnNhaDats) {
+            if (transaction.thangGiaoDich == month && transaction.namGiaoDich == year){
+                System.out.println(transaction.toString());
+                found = true;
+            }
+        }
+        if (!found) System.out.println("Not find, please try again");
+    }
 
     ///////// Tinh trung binh
     public double averageLandTransaction() {

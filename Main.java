@@ -155,7 +155,7 @@ public class Main {
         int option;
         do {
             System.out.println("---MENU---");
-            System.out.println("1. Xuat ra cac giao dich cua thang 9 nam 2013");
+            System.out.println("1. Xuat ra cac giao dich cua thang va nam tu chon");
             System.out.println("2. Cap nhat lai dien tich/don gia");
             System.out.println("3. Tim giao dich lon nhat");
             System.out.println("4. Sap xep thu tu theo gia tien cac loai giao dich");
@@ -170,6 +170,11 @@ public class Main {
             switch (option) {
                 case 1:
                     // Handle option 1
+                    System.out.print("Input month: ");
+                    int day = s.nextInt();
+                    System.out.print("Input year: ");
+                    int year = s.nextInt();
+                    manage.printTransactionsByDate(day, year);
                     break;
                 case 2:
                     // Handle option 2
@@ -194,7 +199,6 @@ public class Main {
                 case 8:
                     // Handle option 8
                     manage.printTransactions();
-                    
                     break;
                 case 0:
                     // Handle option 0
