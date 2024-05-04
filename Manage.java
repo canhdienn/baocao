@@ -34,6 +34,7 @@ public class Manage {
     //     for (quanLyNhaDat employee : listnNhaDats) {
     //         employee.coefficientSalary += increase;
     //     }
+    //Tinh trung binh
     public double averageLandTransaction() {
         double total = 0;
         int count = 0;
@@ -44,8 +45,6 @@ public class Manage {
                 count++;
             }
         }
-
-    
         return count > 0 ? total / count : 0;
     }
 }
