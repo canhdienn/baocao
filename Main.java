@@ -153,7 +153,6 @@ public class Main {
                     // Handle option 6
                     break;
                 case 0:
-                    // Handle option 0
                     break;
                 default:
                     System.out.println("Invalid option. Please choose again.");
