@@ -8,11 +8,11 @@ public class quanLyNha extends quanLyNhaDat{
         this.diaChi = diaChi;
     }
     public static enum LoaiNha {
-        A, B, C
+        CaoCap, Thuong;
     }
     @Override
     double thanhTien() {
-        if (loaiNha.equals("Cao cap")) {
+        if (loaiNha.equals(LoaiNha.CaoCap.name())) {
             return dienTich * donGia;
         } else {
             return dienTich * donGia * 0.9;
