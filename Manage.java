@@ -4,19 +4,19 @@ import java.util.Comparator;
 import java.util.List;
 
 public class Manage{
-    private double donGia;
+    // private double donGia;
     public List<quanLyNhaDat> listnNhaDats;
 
     public Manage() {
         listnNhaDats = new ArrayList<>();
     }
 
-    ///////////////// Them giao dich
+    /////////////// Them giao dich
     public void addTransaction(quanLyNhaDat transaction) {
         listnNhaDats.add(transaction);
     }
 
-    ///////////// In cac giao dich ra
+    ///////////// In tat ca cac giao dich ra
     public void printTransactions() {
         for (quanLyNhaDat transaction : listnNhaDats) {
             System.out.println(transaction.toString());
@@ -81,7 +81,7 @@ public class Manage{
                 found = true;
             }
         }
-        if (!found) System.out.println("Not find, please try again");
+        if (!found) System.out.println("Not find, please try again!!");
     }
 
     ///////// Tinh trung binh
@@ -98,9 +98,11 @@ public class Manage{
         return count > 0 ? total / count : 0;
     }
 
-    public double getDonGia() {
-        return this.donGia;
-    }
+    // public double getDonGia() {
+    //     return this.donGia;
+    // }
+
+    /////////// Sap xep theo don gia
     public void sortTransactionsByPrice() {
         Collections.sort(listnNhaDats, new Comparator<quanLyNhaDat>() {
             @Override
@@ -109,10 +111,13 @@ public class Manage{
             }
         });
     }
-    public void setDonGia(double donGia) {
-        this.donGia = donGia;
-    }
+    // public void setDonGia(double donGia) {
+    //     this.donGia = donGia;
+    // }
+
+    ///////// Update Don gia
     public void updateDonGia(String transactionId, double donGia) {
+        boolean found = false;
         for (quanLyNhaDat transaction : listnNhaDats) {
             if (transaction.getMaGiaoDich().equals(transactionId)) {
                 if (transaction instanceof quanLyDat) {
@@ -120,11 +125,12 @@ public class Manage{
                 } else if (transaction instanceof quanLyNha) {
                     ((quanLyNha) transaction).setDonGia(donGia);
                 }
+                found = true;
                 break;
             }
-        }
+        } if (!found) System.out.println("Not find Transastion, please try again!!");
     }
-    public void printTransaction1(String transactionId) {
+    public void print1Transaction(String transactionId) {
         for (quanLyNhaDat transaction : listnNhaDats) {
             if (transaction.getMaGiaoDich().equals(transactionId)) {
                 System.out.println(transaction.toString());

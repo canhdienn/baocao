@@ -27,7 +27,4 @@ public class quanLyDat extends quanLyNhaDat{
                 + ", dienTich=" + dienTich + "]";
     }
     
-
-    
-    
 }
