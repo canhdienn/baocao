@@ -9,7 +9,6 @@ public class Main {
         Manage manage = new Manage();
 
         try (Scanner scanner = new Scanner(file)) {
-
             while(scanner.hasNextLine()){
                 // Read and add land transaction
                 String id1 = scanner.nextLine();
@@ -45,10 +44,8 @@ public class Main {
         }catch (FileNotFoundException e) {
             System.out.println("File not found");
         }
-
-            // Display menu and handle user input
-            displayMenu(manage);
-
+        // Display menu and handle user input
+        displayMenu(manage);
     }
 
     private static void displayMenu(Manage manage) {
@@ -60,18 +57,16 @@ public class Main {
             System.out.println("2. Cap nhat lai don gia");
             System.out.println("3. Tim giao dich co thanh tien lon nhat");
             System.out.println("4. Sap xep cac giao dich theo don gia");
-            System.out.println("5. Xem giao dich da ban hay chua");
-            System.out.println("6. Xuat ra file output");
+            System.out.println("5. Tong so luong giao dich tung loai");
+            System.out.println("6. Ban giao dich");
             System.out.println("7. Tinh trung binh thanh tien giao dich dat");
             System.out.println("8. Xem tat ca cac giao dich");
-            System.out.println("9. Tong so luong giao dich tung loai");
             System.out.println("0. Thoat");
             System.out.println();
             System.out.println("Enter option: ");
             option = s.nextInt();
             switch (option) {
                 case 1:
-                    // Handle option 1
                     System.out.print("Input month: ");
                     int day = s.nextInt();
                     System.out.print("Input year: ");
@@ -79,7 +74,6 @@ public class Main {
                     manage.printTransactionsByDate(day, year);
                     break;
                 case 2:
-                    // Handle option 2
                     System.out.print("Enter the transaction ID: ");
                     String transactionId = s.next();
                     System.out.print("Enter the new price: ");
@@ -88,43 +82,40 @@ public class Main {
                     manage.print1Transaction(transactionId);
                     break;
                 case 3:
-                    // Handle option 3
                     quanLyNhaDat maxTienDat = manage.findMaxThanhTienDat();
                     quanLyNhaDat maxTienNha = manage.findMaxThanhTienNha();
                     System.out.println("Giao dich Dat cao nhat: "+ maxTienDat.toString());
                     System.out.println("Giao dich Nha cao nhat: "+ maxTienNha.toString());
                     break;
                 case 4:
-                    // Handle option 4
                     manage.sortTransactionsByPrice();
                     manage.printTransactions();
                     break;
                 case 5:
-                    // Handle option 5
+                    System.out.println("So luong GD DAT: " + manage.findSoLuongDat());
+                    System.out.println("So luong GD NHA: " + manage.findSoLuongNha());
                     break;
                 case 6:
-                    // Handle option 6
+                    System.out.print("Enter the transaction ID: ");
+                    String transactionId2 = s.next();
+                    System.out.print("Enter sold price: ");
+                    double soldPrice = s.nextDouble();
+                    manage.updateDaBan(transactionId2, true, soldPrice);
+                    manage.print1Transaction(transactionId2);
                     break;
                 case 7:
-                    // Handle option 7
                     double average = manage.averageLandTransaction();
                     System.out.println("Trung binh thanh tien cua giao dich dat " + average);
                     break;
                 case 8:
-                    // Handle option 8
                     manage.printTransactions();
                     break;
-                case 9:
-                    // Handle option 9
-                    System.out.println("So luong GD DAT: " + manage.findSoLuongDat());
-                    System.out.println("So luong GD NHA: " + manage.findSoLuongNha());
-                    break;
                 case 0:
-                    // Handle option 0
                     break;
                 default:
-                    System.out.println("Invalid option. Please choose again.");
+                    System.out.println("Invalid option, please choose again");
             }
         } while (option != 0);
+        s.close();
     }
 }

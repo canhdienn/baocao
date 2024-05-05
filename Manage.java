@@ -4,13 +4,11 @@ import java.util.Comparator;
 import java.util.List;
 
 public class Manage{
-    // private double donGia;
     public List<quanLyNhaDat> listnNhaDats;
 
     public Manage() {
         listnNhaDats = new ArrayList<>();
     }
-
     /////////////// Them giao dich
     public void addTransaction(quanLyNhaDat transaction) {
         listnNhaDats.add(transaction);
@@ -50,7 +48,6 @@ public class Manage{
         return maxThanhTien instanceof quanLyNha ? maxThanhTien : null;
     }
     //////////Tinh Tong so luong tung loai
-    
     public int findSoLuongDat() {
         int count = 0;
 
@@ -81,7 +78,7 @@ public class Manage{
                 found = true;
             }
         }
-        if (!found) System.out.println("Not find, please try again!!");
+        if (!found) System.out.println("Not found, please try again!!");
     }
 
     ///////// Tinh trung binh
@@ -98,10 +95,6 @@ public class Manage{
         return count > 0 ? total / count : 0;
     }
 
-    // public double getDonGia() {
-    //     return this.donGia;
-    // }
-
     /////////// Sap xep theo don gia
     public void sortTransactionsByPrice() {
         Collections.sort(listnNhaDats, new Comparator<quanLyNhaDat>() {
@@ -111,9 +104,6 @@ public class Manage{
             }
         });
     }
-    // public void setDonGia(double donGia) {
-    //     this.donGia = donGia;
-    // }
 
     ///////// Update Don gia
     public void updateDonGia(String transactionId, double donGia) {
@@ -128,7 +118,7 @@ public class Manage{
                 found = true;
                 break;
             }
-        } if (!found) System.out.println("Not find Transastion, please try again!!");
+        } if (!found) System.out.println("Not found Transastion, please try again!!");
     }
     public void print1Transaction(String transactionId) {
         for (quanLyNhaDat transaction : listnNhaDats) {
@@ -138,5 +128,24 @@ public class Manage{
             }
         }
     }
-}
 
+    ////////// Them trang thai da ban
+    public void updateDaBan(String transactionId, boolean daBanhaychua, double soTienBan) {
+        boolean found = false;
+        for (quanLyNhaDat transaction : listnNhaDats) {
+            if (transaction.getMaGiaoDich().equals(transactionId)) {
+                if (transaction instanceof quanLyDat) {
+                    ((quanLyDat) transaction).setDaBan(daBanhaychua);
+                    if (soTienBan > transaction.thanhTien()) System.out.println("Giao dich sinh LOI");
+                    else System.out.println("Giao dich sinh LO");
+                } else if (transaction instanceof quanLyNha) {
+                    ((quanLyNha) transaction).setDaBan(daBanhaychua);
+                    if (soTienBan > transaction.thanhTien()) System.out.println("Giao dich sinh LOI");
+                    else System.out.println("Giao dich sinh LO");
+                }
+                found = true;
+                break;
+            }
+        } if (!found) System.out.println("Not found Transastion, please try again!!");
+    }
+}

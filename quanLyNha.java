@@ -25,7 +25,7 @@ public class quanLyNha extends quanLyNhaDat{
     public String toString() {
         return "quanLyNha [maGiaoDich=" + maGiaoDich + ", loaiNha=" + loaiNha + ", ngayGiaoDich=" + ngayGiaoDich
                 + ", diaChi=" + diaChi + ", thangGiaoDich=" + thangGiaoDich + ", namGiaoDich=" + namGiaoDich
-                + ", donGia=" + donGia + ", dienTich=" + dienTich + "]";
+                + ", donGia=" + donGia + ", dienTich=" + dienTich + ", daBan=" + DaBan(daBan) + "]";
     }
     
 }

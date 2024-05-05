@@ -11,7 +11,7 @@ public class quanLyDat extends quanLyNhaDat{
     }
     @Override
     double thanhTien() {
-        if (loaiDat.equals("A")) {
+        if (loaiDat.equals(LoaiDat.A.name())) {
             return dienTich * donGia * 1.5;
         } else {
             return dienTich * donGia;
@@ -24,7 +24,6 @@ public class quanLyDat extends quanLyNhaDat{
     public String toString() {
         return "quanLyDat [maGiaoDich=" + maGiaoDich + ", loaiDat=" + loaiDat + ", ngayGiaoDich=" + ngayGiaoDich
                 + ", thangGiaoDich=" + thangGiaoDich + ", namGiaoDich=" + namGiaoDich + ", donGia=" + donGia
-                + ", dienTich=" + dienTich + "]";
-    }
-    
+                + ", dienTich=" + dienTich + ", daBan=" + DaBan(daBan) + "]";
+    }   
 }

@@ -5,6 +5,7 @@ abstract class quanLyNhaDat{
     protected int namGiaoDich;
     protected double donGia;
     protected double dienTich;
+    protected boolean daBan;
 
     public quanLyNhaDat(String maGiaoDich, int ngayGiaoDich, int thangGiaoDich, int namGiaoDich,double donGia,double dienTich){
         this.maGiaoDich = maGiaoDich;
@@ -13,6 +14,7 @@ abstract class quanLyNhaDat{
         this.namGiaoDich = namGiaoDich;
         this.donGia = donGia;
         this.dienTich = dienTich;
+        this.daBan = false;
     }
     abstract double thanhTien();
     
@@ -52,4 +54,15 @@ abstract class quanLyNhaDat{
     public void setDienTich(double dienTich) {
         this.dienTich = dienTich;
     }
+    public boolean isDaBan() {
+        return daBan;
+    }
+    public void setDaBan(boolean daBan) {
+        this.daBan = daBan;
+    }
+    public String DaBan (boolean daBan){
+        if (daBan) return "Roi";
+        else return "Chua";
+    }
+
 }
